@@ -24,7 +24,13 @@ async function login() {
     } else if (data.errors) {
         let errorMessages = '';
         data.errors.forEach(hiba => {
-            
+            errorMessages += `${hiba.error}\n`;
         });
+        alert(errorMessages);
+
+    } else if (data.error) {
+        alert(data.error);
+    } else {
+        alert('Ismeretlen hiba!');
     }
 }
